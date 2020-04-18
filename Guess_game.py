@@ -6,14 +6,14 @@ def guess_game(limit, number):
             guess = int(input('What is your guess'))
             limit -= 1
             if random_number == guess:
-                print('You won')
+                print('You got it right!')
                 break
             elif guess > number:
                 print('Guess is out of range')
-                print(f'You have {limit} trial(s) left')
+                print(f'You have {limit} guess(es) left')
             else:
-                print('Wrong guess')
-                print(f'You have {limit} trial(s) left')
+                print('That was wrong')
+                print(f'You have {limit} guess(es) left')
         print('Game over')
         print(f'The random number was {random_number}')
     except ValueError:
