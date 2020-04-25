@@ -1,4 +1,5 @@
 import random
+
 def guess_game(limit, number):
     random_number =  random.randint(1, number)
     try:
@@ -31,16 +32,31 @@ def hard():
     print("You are to guess a number between 1 and 50, and you have 3 guesses")
     guess_game(3, 50)
     
+def try_again():
+    again = input('Do you want to play again? Yes/No')
+    if again.upper() == 'YES':
+        welcome()
+    elif again.upper() == 'NO':
+        print('Thanks for playing')
+    else:
+        print('Wrong input')
+        try_again()
+    
 def welcome():
     print('Welcome to Ema guessing game')
     difficulty = input("Choose your difficuly between Easy, Medium and Hard")
     if difficulty.upper() == "EASY":
         easy()
+        try_again()
     elif difficulty.upper() == "MEDIUM":
         medium()
+        try_again()
     elif difficulty.upper() == "HARD":
         hard()
+        try_again()
     else:
         print('Wrong input')
+        welcome()
+        
 
 welcome()
