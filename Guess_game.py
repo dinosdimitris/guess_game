@@ -3,7 +3,7 @@ import random
 def guess_game(limit, number):
     random_number =  random.randint(1, number)
     try:
-        while(limit <= limit and limit > 0):
+        while limit > 0:
             guess = int(input('What is your guess'))
             limit -= 1
             if random_number == guess:
